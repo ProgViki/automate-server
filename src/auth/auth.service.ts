@@ -1,7 +1,4 @@
-import { Injectable } from '@nestjs/common';
 
-@Injectable()
-export class AuthService {}
 import {
   BadRequestException,
   Injectable,
@@ -25,8 +22,10 @@ import { addMinutes } from 'date-fns';
 import { v4 as uuidv4 } from 'uuid';
 import { MailService } from '../mail/mail.service';
 
+
 @Injectable()
 export class AuthService {
+  
   constructor(
     private readonly prisma: PrismaService,
     private readonly jwt: JwtService,
